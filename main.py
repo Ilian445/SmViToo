@@ -16,6 +16,10 @@ os.system('pip3 install colorama')
 import colorama
 
 
+#Logo var
+logo = ' ::::::::  ::::    ::::  :::     ::: ::::::::::: :::::::::::  ::::::::   ::::::::  \n:+:    :+: +:+:+: :+:+:+ :+:     :+:     :+:         :+:     :+:    :+: :+:    :+: \n+:+        +:+ +:+:+ +:+ +:+     +:+     +:+         +:+     +:+    +:+ +:+    +:+ \n+#++:++#++ +#+  +:+  +#+ +#+     +:+     +#+         +#+     +#+    +:+ +#+    +:+ \n       +#+ +#+       +#+  +#+   +#+      +#+         +#+     +#+    +#+ +#+    +#+ \n#+#    #+# #+#       #+#   #+#+#+#       #+#         #+#     #+#    #+# #+#    #+# \n ########  ###       ###     ###     ###########     ###      ########   ######## '
+
+
 
 #DEFs
 def main():
@@ -24,7 +28,7 @@ def main():
 	else:
 		os.system('clear')
 	colorama.init()
-	print(colorama.Fore.GREEN + '##     ## #### ########  ##     ##  ######  ########  #######   #######  ##       \n##     ##  ##  ##     ## ##     ## ##    ##    ##    ##     ## ##     ## ##       \n##     ##  ##  ##     ## ##     ## ##          ##    ##     ## ##     ## ##       \n##     ##  ##  ########  ##     ##  ######     ##    ##     ## ##     ## ##       \n ##   ##   ##  ##   ##   ##     ##       ##    ##    ##     ## ##     ## ##       \n  ## ##    ##  ##    ##  ##     ## ##    ##    ##    ##     ## ##     ## ##       \n   ###    #### ##     ##  #######   ######     ##     #######   #######  ########')
+	print(colorama.Fore.GREEN + logo)
 	print("\n"+colorama.Fore.CYAN+"Author: "+colorama.Fore.YELLOW+"https://github.com/ilian445")
 	print("\n"+colorama.Fore.YELLOW+"1) Create MessageBox\n0) Exit\n")
 
@@ -35,7 +39,8 @@ def main():
 
 def messagebox():
 	#lib
-	os.system('pip3 install tkinter pyinstaller')
+	os.system('pip3 install tkinter')
+	os.system('pip3 install pyinstaller')
 
 
 	#Enter text, title
@@ -44,7 +49,7 @@ def messagebox():
 	else:
 		os.system('clear')
 	colorama.init()
-	print(colorama.Fore.GREEN + '##     ## #### ########  ##     ##  ######  ########  #######   #######  ##       \n##     ##  ##  ##     ## ##     ## ##    ##    ##    ##     ## ##     ## ##       \n##     ##  ##  ##     ## ##     ## ##          ##    ##     ## ##     ## ##       \n##     ##  ##  ########  ##     ##  ######     ##    ##     ## ##     ## ##       \n ##   ##   ##  ##   ##   ##     ##       ##    ##    ##     ## ##     ## ##       \n  ## ##    ##  ##    ##  ##     ## ##    ##    ##    ##     ## ##     ## ##       \n   ###    #### ##     ##  #######   ######     ##     #######   #######  ########')
+	print(colorama.Fore.GREEN + logo)
 	print("\n"+colorama.Fore.CYAN+"Author: "+colorama.Fore.YELLOW+"https://github.com/ilian445"+'\n')
 	title = str(input(colorama.Fore.RED +'Enter title: ' + colorama.Fore.WHITE))
 	text = str(input(colorama.Fore.RED +'Enter text: ' + colorama.Fore.WHITE))
@@ -56,10 +61,10 @@ def messagebox():
 	else:
 		os.system('clear')
 	colorama.init()
-	print(colorama.Fore.GREEN + '##     ## #### ########  ##     ##  ######  ########  #######   #######  ##       \n##     ##  ##  ##     ## ##     ## ##    ##    ##    ##     ## ##     ## ##       \n##     ##  ##  ##     ## ##     ## ##          ##    ##     ## ##     ## ##       \n##     ##  ##  ########  ##     ##  ######     ##    ##     ## ##     ## ##       \n ##   ##   ##  ##   ##   ##     ##       ##    ##    ##     ## ##     ## ##       \n  ## ##    ##  ##    ##  ##     ## ##    ##    ##    ##     ## ##     ## ##       \n   ###    #### ##     ##  #######   ######     ##     #######   #######  ########')
+	print(colorama.Fore.GREEN + logo)
 	print("\n"+colorama.Fore.CYAN+"Author: "+colorama.Fore.YELLOW+"https://github.com/ilian445"+'\n')
 	print(colorama.Fore.WHITE + 'Select type: ')
-	print(colorama.Fore.YELLOW + '1) Info\n2) Warning\n3) Error\n4) Question (Yes/No)\n0) Exit\n')
+	print(colorama.Fore.YELLOW + '1) Info\n2) Warning\n3) Error\n4) Question (Yes/No)\n5) Question (Retry/Cancel)\n0) Exit\n')
 
 
 	#Create virus
@@ -80,12 +85,20 @@ def messagebox():
 		with open('temp.py', 'w') as f:
 			f.write(f"import tkinter.messagebox\ntkinter.messagebox.askyesno(title='{title}', message='{text}')")
 
+	elif answ == 5:
+		with open('temp.py', 'w') as f:
+			f.write(f"import tkinter.messagebox\ntkinter.messagebox.askokcancel('{title}', '{text}')")
+
 	else:
 		pass
 
 	#Build
 	os.system('pyinstaller --noconfirm --onefile --windowed  "temp.py"')
-	print(colorama.Fore.BLACK+colorama.Back.GREEN+'    Successful!    '+colorama.Fore.WHITE+colorama.Back.BLACK)
+	print(colorama.Fore.BLACK+colorama.Back.GREEN+'           Successful!          '+colorama.Fore.WHITE+colorama.Back.BLACK)
+	print(colorama.Fore.BLACK+colorama.Back.GREEN+'    Saved to: /dist/temp.exe    '+colorama.Fore.WHITE+colorama.Back.BLACK)
+
+def keylogger():
+	
 
 main()
 
