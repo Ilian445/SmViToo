@@ -97,9 +97,6 @@ def messagebox():
 	print(colorama.Fore.BLACK+colorama.Back.GREEN+'           Successful!          '+colorama.Fore.WHITE+colorama.Back.BLACK)
 	print(colorama.Fore.BLACK+colorama.Back.GREEN+'    Saved to: /dist/temp.exe    '+colorama.Fore.WHITE+colorama.Back.BLACK)
 
-def keylogger():
-	
-
 main()
 
 #import tkinter.messagebox
